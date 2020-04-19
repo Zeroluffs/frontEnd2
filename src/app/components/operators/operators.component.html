@@ -1,0 +1,67 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+    <div>
+        <input type="hidden"
+        name="$key"
+        #$key="ngModel"
+        [(ngModel)] ="operatorService.selectedOperator.$key"
+        >
+    </div>
+<div>
+    <input type="text"
+    name="operatorEmail"
+    placeholder="email"
+    #operatorEmail="ngModel"
+    [(ngModel)]="operatorService.selectedOperator.operatorEmail"
+    >
+</div>
+
+<div>
+    <input type="text"
+    name="operatorName"
+    placeholder="name"
+    #operatorName= "ngModel"
+    [(ngModel)]="operatorService.selectedOperator.operatorName"
+    >
+</div>
+
+<div>
+    <input type="file"
+    placeholder="photo"
+    name="operatorPhoto"
+    #operatorPhoto= "ngModel"
+    [(ngModel)]="operatorService.selectedOperator.operatorPhoto"
+    >
+</div>
+
+<div>
+    <input type="text"
+    placeholder="address"
+    name="operatorAddress"
+    #operatorAddress= "ngModel"
+    [(ngModel)]="operatorService.selectedOperator.operatorAddress"
+    >
+</div>
+
+<div>
+    <input type="text"
+    placeholder="enterprise"
+    name="operatorEnterprise"
+    #operatorEnterprise = "ngModel"
+    [(ngModel)]="operatorService.selectedOperator.operatorEnterprise"
+    >
+</div>
+
+<div>
+    <input type="password"
+    
+    placeholder="password"
+    name="operatorPassword"
+    #operatorPassword= "ngModel"
+    [(ngModel)]="operatorService.selectedOperator.operatorPassword"
+    >
+</div>
+<div>
+    <button type="submit">registrar operador</button>
+</div>
+</form>

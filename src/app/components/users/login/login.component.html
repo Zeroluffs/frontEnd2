@@ -1,0 +1,17 @@
+<p>hiiiiii</p>
+<form #loginForm="ngForm" (ngSubmit)="onLogin()">
+    <input type="text"
+    name="email"
+    placeholder="Enter Email"
+    [(ngModel)]="email"
+    required>
+
+    <input type="password"
+    name="password"
+    [(ngModel)]="password"
+    placeholder="password"
+    required>
+<button type="submit">
+    ingresar
+</button>
+</form>

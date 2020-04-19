@@ -1,0 +1,87 @@
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+  <div>
+    <input
+      type="hidden"
+      name="$key"
+      #$key="ngModel"
+      [(ngModel)]="userService.selectedUser.$key"
+    />
+  </div>
+
+  <div>
+    <input
+      type="text"
+      name="userName"
+      #userName="ngModel"
+      placeholder="user name"
+      [(ngModel)]="userService.selectedUser.userName"
+    />
+  </div>
+
+  <div>
+    <input
+      type="text"
+      name="documentType"
+      #documentType="ngModel"
+      placeholder="tipo de documento"
+      [(ngModel)]="userService.selectedUser.documentType"
+    />
+  </div>
+
+  <div>
+      <input type="number"
+      name="documentID"
+      #documentID= "ngModel"
+      placeholder="id del documento"
+      [(ngModel)]="userService.selectedUser.documentID"
+      >
+  </div>
+
+  <div>
+    <input type="text"
+    name="userEmail"
+    #userEmail= "ngModel"
+    placeholder="email"
+    [(ngModel)]="userService.selectedUser.userEmail"
+    >
+</div>
+<div>
+    <input type="file"
+    name="enterpriseImg"
+    #enterpriseImg= "ngModel"
+    accept="image/png, image/jpeg"
+    placeholder="imagen de la empresa"
+    [(ngModel)]="userService.selectedUser.enterpriseImg"
+    >
+</div>
+
+<div>
+    <input type="text"
+    name="enterpriseName"
+    #enterpriseName= "ngModel"
+    placeholder="nombre de la empresa"
+    [(ngModel)]="userService.selectedUser.enterpriseName"
+    >
+</div>
+
+<div>
+    <input type="number"
+    name="userPhone"
+    #userPhone= "ngModel"
+    placeholder="telefono"
+    [(ngModel)]="userService.selectedUser.userPhone"
+    >
+</div>
+
+<div>
+    <input type="password"
+    name="password"
+    #password= "ngModel"
+    placeholder="password"
+    [(ngModel)]="userService.selectedUser.password"
+    >
+</div>
+<div>
+    <button type="submit"> registrar</button>
+</div>
+</form>
