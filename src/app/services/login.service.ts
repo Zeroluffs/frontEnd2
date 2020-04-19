@@ -1,25 +1,17 @@
-import { Injectable } from "@angular/core";
-import { Login } from "../models/login.model";
-import { BehaviorSubject, Subject, Observable } from "rxjs";
+import { Injectable } from '@angular/core'
+import { Login } from '../models/login.model'
+import { BehaviorSubject, Subject, Observable } from 'rxjs'
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class LoginService {
-  private subject = new Subject<any>();
+  private currentEmail: BehaviorSubject<any> = new BehaviorSubject<any>(null)
+  public currentEmail$: Observable<any> = this.currentEmail.asObservable()
 
-  sendMessage(message: string) {
-    this.subject.next({ text: message });
+  updateCurrentEmail(updatedEmail) {
+    this.currentEmail.next(updatedEmail)
   }
-
-  clearMessage() {
-    this.subject.next();
-  }
-
-  getMessage(): Observable<any> {
-    return this.subject.asObservable();
-  }
-
-  loggedUser: Login = new Login();
+  loggedUser: Login = new Login()
   constructor() {}
 }

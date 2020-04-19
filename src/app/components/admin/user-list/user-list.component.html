@@ -1,4 +1,16 @@
-<p>user-list works!</p>
+<p>hi</p>
+<div *ngFor="let operator of enterpriseOperators">
+  <p>
+    {{ operator.operatorName }}
+  </p>
 
+  <p>
+    {{ operator.operatorEnterprise }}
+  </p>
+
+  <p>
+    {{ operator.operatorEmail }}
+  </p>
+</div>
 
 <app-operators></app-operators>
